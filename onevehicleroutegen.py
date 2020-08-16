@@ -1,11 +1,13 @@
 from __future__ import print_function
-from geopy.geocoders import Nominatim
+from geopy.geocoders import GoogleV3
 import networkx as nx
 import osmnx as ox
 from ortools.constraint_solver import routing_enums_pb2
 from ortools.constraint_solver import pywrapcp
 
-geolocator = Nominatim(user_agent=input("Your app name:\n "))
+my_key = "AIzaSyCCNQ5JYWpRxbNE1FhNOMlrJ4CRPrJCliQ"
+
+geolocator = GoogleV3(api_key=my_key)
 G = ox.graph_from_place(input("city (ex.: Piedmont, California, USA):\n "), network_type='drive')
 
 addresses = []
