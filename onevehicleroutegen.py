@@ -5,9 +5,7 @@ import osmnx as ox
 from ortools.constraint_solver import routing_enums_pb2
 from ortools.constraint_solver import pywrapcp
 
-my_key = "AIzaSyCCNQ5JYWpRxbNE1FhNOMlrJ4CRPrJCliQ"
-
-geolocator = GoogleV3(api_key=my_key)
+geolocator = GoogleV3(api_key=input("API key:\n "))
 G = ox.graph_from_place(input("city (ex.: Piedmont, California, USA):\n "), network_type='drive')
 
 addresses = []
